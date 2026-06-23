@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Grid from "@mui/material/Grid";
@@ -27,6 +27,20 @@ export const Home = () => {
   const isPostsLoading = postsData.status === "loading";
   const isTagsLoading = tagsData.status === "loading";
 
+  const [sortType, setSortType] = useState(0);
+
+  const handleSortType = (event, newValue) => {
+    setSortType(newValue);
+
+    if (newValue === 0) {
+      dispatch(fetchPosts("recent"));
+    }
+
+    if (newValue === 1) {
+      dispatch(fetchPosts("top"));
+    }
+  };
+
   useEffect(() => {
     dispatch(fetchPosts());
     dispatch(fetchTags());
@@ -36,8 +50,9 @@ export const Home = () => {
     <>
       <Tabs
         style={{ marginBottom: 15 }}
-        value={0}
+        value={sortType}
         aria-label="basic tabs example"
+        onChange={handleSortType}
       >
         <Tab label="New" />
         <Tab label="Popular" />
