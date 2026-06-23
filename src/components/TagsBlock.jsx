@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 export const TagsBlock = ({ items, isLoading = true }) => {
   return (
-    <SideBlock title="Тэги">
+    <SideBlock title="Tags">
       <List>
         {(isLoading ? [...Array(5)] : items).map((name, i) => (
           <Link
