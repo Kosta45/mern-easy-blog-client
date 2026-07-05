@@ -137,11 +137,7 @@ export const AddPost = () => {
           >
             Delete
           </Button>
-          <img
-            className={styles.image}
-            src={`${import.meta.env.VITE_API_URL}${imageUrl}`}
-            alt="Uploaded"
-          />
+          <img className={styles.image} src={`${imageUrl}`} alt="Uploaded" />
         </>
       )}
       <br />
