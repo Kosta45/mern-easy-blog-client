@@ -65,11 +65,7 @@ export const Home = () => {
               isLoading={isPostsLoading}
               id={postElem?._id}
               title={postElem?.title}
-              imageUrl={
-                postElem?.imageUrl
-                  ? `${import.meta.env.VITE_API_URL}${postElem.imageUrl}`
-                  : ""
-              }
+              imageUrl={postElem?.imageUrl ? `${postElem.imageUrl}` : ""}
               user={postElem?.user}
               createdAt={postElem?.createdAt}
               viewsCount={postElem?.viewsCount}

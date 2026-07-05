@@ -40,11 +40,7 @@ export const FullPost = () => {
       <Post
         id={dataPost?._id}
         title={dataPost?.title}
-        imageUrl={
-          dataPost.imageUrl
-            ? `${import.meta.env.VITE_API_URL}${dataPost.imageUrl}`
-            : ""
-        }
+        imageUrl={dataPost.imageUrl ? `${dataPost.imageUrl}` : ""}
         user={dataPost?.user}
         createdAt={dataPost?.createdAt}
         viewsCount={dataPost?.viewsCount}
@@ -61,7 +57,7 @@ export const FullPost = () => {
               fullName: "Вася Пупкин",
               avatarUrl: "https://mui.com/static/images/avatar/1.jpg",
             },
-            text: "Это тестовый комментарий 555555",
+            text: "It's a test comment 555555",
           },
           {
             user: {
