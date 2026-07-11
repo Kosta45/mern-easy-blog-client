@@ -32,7 +32,8 @@ export const Registration = () => {
     formState: { errors, isValid },
   } = useForm({
     defaultValues: {
-      fullName: "Jack Man",
+      firstName: "Jack",
+      lastName: "Man",
       email: "newmanjack2@test.com",
       password: "newmanjackss12222",
     },
@@ -62,12 +63,21 @@ export const Registration = () => {
       <form action="" onSubmit={handleSubmit(onSubmit)}>
         <TextField
           className={styles.field}
-          label="Full name"
+          label="First name"
           fullWidth
-          error={Boolean(errors.fullName?.message)}
-          helperText={errors.fullName?.message}
+          error={Boolean(errors.firstName?.message)}
+          helperText={errors.firstName?.message}
           type="text"
-          {...register("fullName", { required: "The name is required" })}
+          {...register("firstName", { required: "The first name is required" })}
+        />
+        <TextField
+          className={styles.field}
+          label="Last name"
+          fullWidth
+          error={Boolean(errors.lastName?.message)}
+          helperText={errors.lastName?.message}
+          type="text"
+          {...register("lastName", { required: "The last name is required" })}
         />
         <TextField
           className={styles.field}
